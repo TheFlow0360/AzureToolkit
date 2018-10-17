@@ -22,7 +22,7 @@ export class CognitiveService {
 
     analyzeImage(request: ComputerVisionRequest): Observable<ComputerVisionResponse> {
         return this.http.post(
-                'https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Description,Tags',
+                'https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Description,Tags,Faces',
                 this.computerVisionAPIKey, request)
             .map(response => response.json() as ComputerVisionResponse)
             .catch(this.handleError);

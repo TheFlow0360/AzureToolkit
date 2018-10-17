@@ -19,7 +19,14 @@
 .currentItem div {
     margin: 20px;
 }
+.currentItem div div {
+    margin: 0px;
+}
 .tag {
     margin-right: 5px;
     font-size: 14px;
+}
+.faceList li {
+    margin-left: -20px;
+    list-style-type: none;
 }

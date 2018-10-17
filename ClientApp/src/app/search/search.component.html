@@ -21,6 +21,12 @@
                       [ngClass]="{'label-default': tag.confidence >= .75, 'label-warning': tag.confidence >= .5 && tag.confidence < .75, 'label-danger': tag.confidence < .5}" 
                       *ngFor="let tag of currentAnalytics?.tags">{{tag.name}}</span>
             </div>
+            <div *ngIf="currentAnalytics?.faces.length > 0">
+                <h4>Found {{currentAnalytics?.faces.length}} Faces:</h4>
+                <ul class=faceList>
+                    <li *ngFor="let face of currentAnalytics?.faces"> {{face.gender}}, {{face.age}} yrs</li>
+                </ul>
+            </div>
         </div>
         <div *ngIf="isAnalyzing">
             <h4>Analyzing Photo...</h4>
