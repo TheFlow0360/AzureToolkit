@@ -16,7 +16,7 @@ export class UserService {
     }
 
     public getUser(): Observable<User> {
-        return this.http.get('${this.originUrl}/.auth/me')
+        return this.http.get(this.originUrl + '/.auth/me')
             .map(response => {
                 try {
                     this.aadUser = response.json()[0] as AADUser;
@@ -37,7 +37,7 @@ export class UserService {
 
                     return user;
                 } catch (Exception) {
-                    console.log('Error: ${Exception}');
+                    console.log('Error: ' + Exception);
                 }
             }).catch(this.handleError);
     }
