@@ -32,6 +32,9 @@ export class UserService {
                             case 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname':
                                 user.lastName = claim.val;
                                 break;
+                            case 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/jobtitle':
+                                user.job = claim.val;
+                                break;
                         }
                     });
 
