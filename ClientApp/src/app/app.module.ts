@@ -23,12 +23,12 @@ import { CommonModule } from './common/common.module';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    CommonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'search', component: SearchComponent }
-    ]),
-    CommonModule
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
